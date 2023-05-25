@@ -11,7 +11,10 @@ WORKDIR /rails
 ENV RAILS_ENV="production" \
     BUNDLE_DEPLOYMENT="1" \
     BUNDLE_PATH="/usr/local/bundle" \
-    BUNDLE_WITHOUT="development"
+    BUNDLE_WITHOUT="development" \
+    RAILS_MASTER_KEY=4bc438a8bcf7b71d918b1ad09cd09539 \
+    REDIS_URL="redis://redis_app:6400"
+
 
 
 # Throw-away build stage to reduce size of final image
