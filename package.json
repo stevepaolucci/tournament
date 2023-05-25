@@ -8,10 +8,14 @@
     "esbuild": "^0.17.18",
     "postcss": "^8.4.23",
     "tailwindcss": "^3.3.2",
-    "tw-elements": "^1.0.0-beta2"
+    "tw-elements": "^1.0.0-beta2",
+    "cable_ready": "5.0.0",
+    "stimulus_reflex": "3.5.0-rc2",
+    "esbuild-rails": "^1.0.3"
   },
   "scripts": {
-    "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds --public-path=assets",
-    "build:css": "tailwindcss -i ./app/assets/stylesheets/application.tailwind.css -o ./app/assets/builds/application.css --minify"
+    "build": "node esbuild.config.mjs",
+    "build:css": "tailwindcss -i ./app/assets/stylesheets/application.tailwind.css -o ./app/assets/builds/application.css --minify",
+    "build:default": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds --public-path=assets"
   }
 }

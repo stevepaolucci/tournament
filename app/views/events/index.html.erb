@@ -1,0 +1,57 @@
+<div class="container mx-auto px-4 py-4">
+  <div class="flex items-center justify-between flex-wrap mb-6">
+    <h1>Events</h1>
+    <%= link_to new_event_path, class: button_class(theme: "primary") do %>
+      Add New Event
+    <% end %>
+  </div>
+  <div class=" border rounded-lg p-0 content-center shadow-md overflow-y-scroll">
+    <table class="table-auto border-collapse border-slate-400 w-full ">
+      <thead class="header-class">
+        <tr>
+          <th class="header-row">
+            Name
+          </th>
+          <th class="header-row">
+            Level
+          </th>
+          <th class="header-row">
+            Starts at
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @events.each do |event| %>
+          <%= content_tag :tr, id: dom_id(event), class: dom_class(event) do %>
+            <td class="data-row">
+              <%= link_to event.name, event %>
+
+    <a
+      data-reflex="click->LeadReflex#preview_lead"
+      data-id="<%= event.id %>"
+      data-uid="<%#= current_user.id %>"
+      data-bs-toggle="offcanvas"
+      data-bs-target="#offcanvasRight"
+      aria-controls="offcanvasRight"
+      class="cursor-pointer inline-flex items-center px-3 py-2 border border-secondary-200 bg-tertiary hover:bg-secondary-300 text-gray-500 text-sm font-medium rounded-md"
+      >
+            <%#= component 'ui/icon', locals: { name: 'bolt', use_assets_icons: false, classes: 'mr-2 text-gray-500' } %>
+      Preview
+    </a>
+
+            </td>
+            <td class="data-row">
+              <%= event.level %>
+            </td>
+            <td class="data-row">
+              <%= event.starts_at %>
+            </td>
+          <% end %>
+        <% end %>
+      </tbody>
+    </table>
+
+<div id="offcanvas_content">xxx</div>
+
+  </div>
+</div>

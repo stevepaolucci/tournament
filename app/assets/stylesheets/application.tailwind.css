@@ -1,3 +1,45 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+h1 {
+  @apply text-[54px] font-normal leading-relaxed text-gray-900
+}
+
+.form-control {
+  @apply block w-full rounded-md border-secondary-300 focus:border-primary-500 focus:ring-primary-500 p-3 border
+}
+
+.data-row {
+  @apply text-sm p-3 whitespace-nowrap text-gray-500
+}
+
+.header-row {
+  @apply text-gray-500 text-sm px-2 py-2 text-left
+}
+
+.header-class {
+  @apply bg-purple-50 rounded-md
+}
+
+@layer base {
+    @font-face {
+      font-family: 'Hanken Grotesk';
+      font-weight: 400;
+      src: url('HankenGrotesk-Regular.ttf') format("truetype");
+    }
+    @font-face {
+      font-family: 'Hanken Grotesk';
+      font-weight: 600;
+      src: url('HankenGrotesk-SemiBold.ttf') format("truetype");
+    }
+    @font-face {
+      font-family: 'Hanken Grotesk';
+      font-weight: 700;
+      src: url('HankenGrotesk-Bold.ttf') format("truetype");
+    }
+  }
+  
+  html {
+    font-family: 'Hanken Grotesk', system-ui, sans-serif;
+  }
