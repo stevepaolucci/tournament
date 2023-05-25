@@ -1,24 +1,33 @@
 # README
+## Rails
+### Building
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+```
+cd tournament
 
-Things you may want to cover:
+docker build -t app .
 
-* Ruby version
+docker volume create app-storage
 
-* System dependencies
+docker run --rm -it -v app-storage:/rails/storage --name rails_app -d --network rails -p 3000:3000 app
+ 
+-d for detached mode
 
-* Configuration
+```
 
-* Database creation
 
-* Database initialization
+## Redis
+### Dockerfile
+```
+FROM redis:latest
 
-* How to run the test suite
+# Usually runs on 6379
+EXPOSE 6400
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+CMD ["redis-server", "--port", "6400"]
+```
+### Building
+```
+docker build -t redis_image ./redis/.
+docker run --network rails --name redis_app -p 6400:6400 -d redis_image
+```
