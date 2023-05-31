@@ -27,17 +27,22 @@
               <%= link_to event.name, event %>
 
     <a
-      data-reflex="click->LeadReflex#preview_lead"
+      data-reflex="click->EventReflex#preview_event"
       data-id="<%= event.id %>"
       data-uid="<%#= current_user.id %>"
-      data-bs-toggle="offcanvas"
-      data-bs-target="#offcanvasRight"
-      aria-controls="offcanvasRight"
+      data-te-offcanvas-toggle
+      data-te-target="#offcanvasExample"
+      aria-controls="offcanvasExample"
       class="cursor-pointer inline-flex items-center px-3 py-2 border border-secondary-200 bg-tertiary hover:bg-secondary-300 text-gray-500 text-sm font-medium rounded-md"
       >
             <%#= component 'ui/icon', locals: { name: 'bolt', use_assets_icons: false, classes: 'mr-2 text-gray-500' } %>
       Preview
     </a>
+
+
+
+
+
 
             </td>
             <td class="data-row">
@@ -51,7 +56,6 @@
       </tbody>
     </table>
 
-<div id="offcanvas_content">xxx</div>
 
   </div>
 </div>

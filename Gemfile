@@ -74,6 +74,7 @@ end
 
 gem 'stimulus_reflex', '= 3.5.0.rc2'
 gem 'cable_ready', '= 5.0.0.rc2'
+gem "view_component"
 
 # StimulusReflex recommends using Redis for session storage
 # gem "redis-session-store", "0.11.5"
