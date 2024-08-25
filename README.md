@@ -31,3 +31,4 @@ CMD ["redis-server", "--port", "6400"]
 docker build -t redis_image ./redis/.
 docker run --network rails --name redis_app -p 6400:6400 -d redis_image
 ```
+https://dbdiagram.io/d/tournament-645d3a17dca9fb07c4edfd1c
